@@ -7,11 +7,11 @@ SnakeTail::SnakeTail()
 	mSNColor = WHITE;
 }
 
-SnakeTail::SnakeTail(Vector2 position, float size, Color color)
+SnakeTail::SnakeTail(Vector2 snPosition, float snSize, Color snColor)
 {
-	mSNPosition = position;
-	mSNSpeed = { size, 0 };
-	mSNColor = color;
+	mSNPosition = snPosition;
+	mSNSpeed = { snSize, 0 };
+	mSNColor = snColor;
 }
 
 SnakeTail::~SnakeTail()
@@ -33,14 +33,14 @@ Color SnakeTail::GetSnakeTailColor()
 	return mSNColor;
 }
 
-void SnakeTail::SetSnakeTailPostion(Vector2 position)
+void SnakeTail::SetSnakeTailPostion(Vector2 snPosition)
 {
-	mSNPosition.x = position.x;
-	mSNPosition.y = position.y;
+	mSNPosition.x = snPosition.x;
+	mSNPosition.y = snPosition.y;
 }
 
-void SnakeTail::SetSnakeTailSpeed(Vector2 speed)
+void SnakeTail::SetSnakeTailSpeed(Vector2 snSpeed)
 {
-	mSNSpeed.x = speed.x;
-	mSNSpeed.y = speed.y;
+	mSNSpeed.x = snSpeed.x;
+	mSNSpeed.y = snSpeed.y;
 }

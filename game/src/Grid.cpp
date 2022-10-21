@@ -11,13 +11,13 @@ Grid::Grid()
 	mStartPosition = { 0, 0 };
 }
 
-Grid::Grid(unsigned int screenWidth, unsigned int screenHeight, unsigned int squareSize, Vector2 startPosition)
+Grid::Grid(unsigned int screenWidth, unsigned int screenHeight, unsigned int pixelSize, Vector2 startPosition)
 {
 	mScreenWidth = screenWidth;
 	mScreenHeight = screenHeight;
-	mPixelSize = squareSize;
-	mGrid.x = screenWidth % squareSize;
-	mGrid.y = screenHeight % squareSize;
+	mPixelSize = pixelSize;
+	mGrid.x = screenWidth % pixelSize;
+	mGrid.y = screenHeight % pixelSize;
 	mStartPosition = startPosition;
 }
 
@@ -58,12 +58,12 @@ void Grid::Draw()
 	{
 		vect1 = { (mPixelSize * i + mGrid.x / 2) + mStartPosition.x, (mGrid.y / 2) + mStartPosition.y };
 		vect2 = { (mPixelSize * i + mGrid.x / 2) + mStartPosition.x, (mScreenHeight - mGrid.y / 2) + mStartPosition.y };
-		DrawLineV(vect1, vect2, DARKGRAY);
+		DrawLineV(vect1, vect2, BLACK);
 	}
 	for (int i = 0; i < ((mScreenHeight / mPixelSize) + 1); i++)
 	{
 		vect1 = { (mGrid.x / 2 ) + mStartPosition.x, (mPixelSize * i + mGrid.y / 2) + mStartPosition.y-1 };
 		vect2 = { (mScreenWidth - mGrid.x / 2) + mStartPosition.x, (mPixelSize * i + mGrid.y / 2) + mStartPosition.y-1 };
-		DrawLineV(vect1, vect2, DARKGRAY);
+		DrawLineV(vect1, vect2, BLACK);
 	}
 }

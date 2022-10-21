@@ -12,10 +12,10 @@
     <ClInclude Include="..\game\src\Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\game\src\Food.h">
+    <ClInclude Include="..\game\src\Apples.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\game\src\Snake.h">
+    <ClInclude Include="..\game\src\TheSnake.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\SnakeTail.h">
@@ -29,10 +29,10 @@
     <ClCompile Include="..\game\src\Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\game\src\Food.cpp">
+    <ClCompile Include="..\game\src\Apples.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\game\src\Snake.cpp">
+    <ClCompile Include="..\game\src\TheSnake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\game\src\SnakeTail.cpp">

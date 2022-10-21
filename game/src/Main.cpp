@@ -14,14 +14,14 @@ void InitializeGame();
 
 const int screenWidth = 800;
 const int screenHeight = 480;
-const int squareSize = 31;
-const Vector2 startingArea = { 250, 250 };
+const int pixelSize = 31;
+const Vector2 startPosition = { 250, 250 };
 unsigned int frames = 0;
 unsigned int scoreToBeat = 0;
 
 TheSnake cobra;
-Apples apple;
-Board board;
+Apples apples;
+Grid grid;
 
 
 int main(int argc, char* argv[])
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
     InitWindow(screenWidth, screenHeight, "cobra Game");
     SetTargetFPS(60);  
 
-    cobra.SetLoose(true);
+    cobra.SetFailed(true);
 
     // Main game loop
     while (!WindowShouldClose())
@@ -46,19 +46,19 @@ int main(int argc, char* argv[])
 
 void Update()
 {
-    if (!cobra.GetLoose())
+    if (!cobra.GetFailed())
     {
-        cobra.Update(frames, &apple);
+        cobra.Update(frames, &apples);
         frames++;
     }
     else
     {
-        if (apple.GetScore() > scoreToBeat)
-            scoreToBeat = apple.GetScore();
+        if (apples.GetApplesScore() > scoreToBeat)
+            scoreToBeat = apples.GetApplesScore();
         if (IsKeyPressed(KEY_ENTER))
         {
             frames = 0;
-            InitGame();
+            InitializeGame();
         }
     }
 }
@@ -69,12 +69,12 @@ void Draw()
 
     ClearBackground(BLACK);
     
-    if (!cobra.GetLoose())
+    if (!cobra.GetFailed())
     {
         cobra.Draw();
-        apple.Draw();
-        board.Draw();
-        //DrawText(FormatText("BEST: %i", scoreToBeat), squareSize, squareSize*3, 25, YELLOW);
+        apples.Draw();
+        grid.Draw();
+        //DrawText(FormatText("BEST: %i", scoreToBeat), pixelSize, pixelSize*3, 25, YELLOW);
     }
     else
     {
@@ -89,9 +89,9 @@ void Draw()
     EndDrawing();
 }
 
-void InitGame()
+void InitializeGame()
 {
-    board = Board(screenWidth / 2, screenHeight - 100, squareSize, startingArea);
-    cobra = cobra({ (float)(board.GetAreaWidth() / 2) + startingArea.x, (float)(board.GetAreaHeight() / 2) + startingArea.y}, squareSize, &board);
-    apple = apple({ (float)(board.GetNbColumn() / 2) + startingArea.x, (float)(board.GetNbLine() / 2) + startingArea.y }, squareSize, RED);
+    grid = Grid(screenWidth / 2, screenHeight - 100, pixelSize, startPosition);
+    cobra = cobra({ (float)(grid.GetAreaWidth() / 2) + startPosition.x, (float)(grid.GetAreaHeight() / 2) + startPosition.y}, pixelSize, &grid);
+    apples = apples({ (float)(grid.GetNbColumn() / 2) + startPosition.x, (float)(grid.GetNbLine() / 2) + startPosition.y }, pixelSize, RED);
 }
