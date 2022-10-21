@@ -1,24 +1,24 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "Tail.h"
-#include "Board.h"
+#include "SnakeTail.h"
+#include "Grid.h"
 #include "Food.h"
 
 class Snake
 {
 private:
-	std::vector<Tail> mTail;
+	std::vector<SnakeTail> mSnakeTail;
 	std::vector<Vector2> mPosition;
 	float mSize;
 	Vector2 mSpeed;
-	Board* mpBoard;
+	Grid* mpBoard;
 	bool mMoving = false;
 	bool mLoose = false;
 
 public:
 	Snake();
-	Snake(Vector2 position, float size, Board* board);
+	Snake(Vector2 position, float size, Grid* grid);
 	~Snake();
 
 	bool GetLoose();

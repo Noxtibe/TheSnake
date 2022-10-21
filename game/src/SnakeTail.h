@@ -10,15 +10,16 @@ private:
 	Color mSNColor;
 
 public:
+
 	SnakeTail();
 	SnakeTail(Vector2 snPosition, float snSize, Color snColor);
 	~SnakeTail();
 
-	Vector2 GetPosition();
-	Vector2 GetSpeed();
-	Color GetColor();
+	Vector2 GetSnakeTailPosition();
+	Vector2 GetSnakeTailSpeed();
+	Color GetSnakeTailColor();
 
-	void SetPostion(Vector2 position);
-	void SetSpeed(Vector2 speed);
+	void SetSnakeTailPostion(Vector2 snPosition);
+	void SetSnakeTailSpeed(Vector2 snSpeed);
 };
 

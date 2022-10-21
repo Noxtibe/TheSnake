@@ -9,7 +9,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\game\src\Board.h">
+    <ClInclude Include="..\game\src\Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\Food.h">
@@ -26,7 +26,7 @@
     <ClCompile Include="..\game\src\raylib_game.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\game\src\Board.cpp">
+    <ClCompile Include="..\game\src\Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\game\src\Food.cpp">
@@ -35,7 +35,7 @@
     <ClCompile Include="..\game\src\Snake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\game\src\Tail.cpp">
+    <ClCompile Include="..\game\src\SnakeTail.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\game\src\Main.cpp">

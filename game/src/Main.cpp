@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "TheSnake.h"
-#include "Board.h"
+#include "Grid.h"
 
 
 using namespace std;

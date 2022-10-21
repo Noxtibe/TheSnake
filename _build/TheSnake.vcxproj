@@ -168,18 +168,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\game\src\Board.h" />
+    <ClInclude Include="..\game\src\Grid.h" />
     <ClInclude Include="..\game\src\Food.h" />
     <ClInclude Include="..\game\src\Snake.h" />
     <ClInclude Include="..\game\src\SnakeTail.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\game\src\Board.cpp" />
+    <ClCompile Include="..\game\src\Grid.cpp" />
     <ClCompile Include="..\game\src\Food.cpp" />
     <ClCompile Include="..\game\src\Main.cpp" />
     <ClCompile Include="..\game\src\raylib_game.c" />
     <ClCompile Include="..\game\src\Snake.cpp" />
-    <ClCompile Include="..\game\src\Tail.cpp" />
+    <ClCompile Include="..\game\src\SnakeTail.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="raylib.vcxproj">
