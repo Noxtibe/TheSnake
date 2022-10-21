@@ -12,10 +12,10 @@ void Update();
 void Draw();
 void InitializeGame();
 
-const int screenWidth = 800;
-const int screenHeight = 480;
+const int screenWidth = 1280;
+const int screenHeight = 720;
 const int pixelSize = 31;
-const Vector2 startPosition = { 250, 250 };
+const Vector2 startPosition = { 250, 50 };
 unsigned int frames = 0;
 unsigned int scoreToBeat = 0;
 
@@ -67,22 +67,23 @@ void Draw()
 {
     BeginDrawing();
 
-    ClearBackground(BLACK);
+    ClearBackground(WHITE);
     
     if (!cobra.GetFailed())
     {
         cobra.Draw();
         apples.Draw();
         grid.Draw();
-        //DrawText(FormatText("BEST: %i", scoreToBeat), pixelSize, pixelSize*3, 25, YELLOW);
+        DrawText(TextFormat("Beat: %i", scoreToBeat), pixelSize, pixelSize*3, 25, RED);
     }
     else
     {
-        DrawText("Press ENTER for new game", GetScreenWidth() / 2 - MeasureText("Press ENTER for new game", 25) / 2, GetScreenHeight() / 2 - 50, 25, GRAY);
+        DrawText("Press ENTER to discover... TheSnake", GetScreenWidth() / 2 - MeasureText("Press ENTER to discover... The Snake", 25) / 2, GetScreenHeight() / 2 - 50, 25, RED);
         if (scoreToBeat != 0) 
         {
-            //DrawText(FormatText("BEST SCORE: %i", scoreToBeat), GetScreenWidth() / 2 - MeasureText(FormatText("BEST SCORE : %i", scoreToBeat), 25) / 2, GetScreenHeight() * 0.6f, 25, YELLOW);
-            //DrawText(FormatText("Score: %i", apple.GetScore()), GetScreenWidth() / 2 - MeasureText(FormatText("Score : %i", apple.GetScore()), 20) / 2, GetScreenHeight() * 0.5f, 20, GRAY);
+            // TEXT FORMAT NOT FORMAT TEXT....
+            DrawText(TextFormat("Score to Beat: %i", scoreToBeat), GetScreenWidth() / 2 - MeasureText(TextFormat("Score to Beat : %i", scoreToBeat), 25) / 2, GetScreenHeight() * 0.6f, 25, RED);
+            DrawText(TextFormat("Score: %i", apples.GetApplesScore()), GetScreenWidth() / 2 - MeasureText(TextFormat("Score : %i", apples.GetApplesScore()), 20) / 2, GetScreenHeight() * 0.5f, 20, RED);
         }
     }
 
@@ -92,6 +93,6 @@ void Draw()
 void InitializeGame()
 {
     grid = Grid(screenWidth / 2, screenHeight - 100, pixelSize, startPosition);
-    cobra = cobra({ (float)(grid.GetAreaWidth() / 2) + startPosition.x, (float)(grid.GetAreaHeight() / 2) + startPosition.y}, pixelSize, &grid);
-    apples = apples({ (float)(grid.GetNbColumn() / 2) + startPosition.x, (float)(grid.GetNbLine() / 2) + startPosition.y }, pixelSize, RED);
+    cobra = TheSnake({ (float)(grid.GetAreaWidth() / 2) + startPosition.x, (float)(grid.GetAreaHeight() / 2) + startPosition.y}, pixelSize, &grid);
+    apples = Apples({ (float)(grid.GetNbColumn() / 2) + startPosition.x, (float)(grid.GetNbLine() / 2) + startPosition.y }, pixelSize, RED);
 }

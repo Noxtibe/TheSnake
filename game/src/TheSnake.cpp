@@ -13,7 +13,7 @@ TheSnake::TheSnake()
 
 TheSnake::TheSnake(Vector2 snakePosition, float snakeSize, Grid* grid)
 {
-	mSnakeTail.push_back(SnakeTail(snakePosition, snakeSize, ORANGE));
+	mSnakeTail.push_back(SnakeTail(snakePosition, snakeSize, YELLOW));
 	mSnakePosition.push_back(snakePosition);
 	mSnakeSize = snakeSize;
 	mSnakeSpeed = { snakeSize, 0};

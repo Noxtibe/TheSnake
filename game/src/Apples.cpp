@@ -56,5 +56,5 @@ void Apples::SetActivated(bool activated)
 void Apples::Draw()
 {
 	DrawCircle((mApplesPositions.x + mApplesSize / 2)+1, mApplesPositions.y + mApplesSize / 2, mApplesSize / 2, SKYBLUE);
-	//DrawText(FormatText("SCORE: %i",  mScore), mApplesSize, mApplesSize, 25, GRAY);
+	DrawText(TextFormat("SCORE: %i",  mApplesScore), mApplesSize, mApplesSize, 25, RED);
 }
