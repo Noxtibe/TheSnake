@@ -74,11 +74,11 @@ void Draw()
         cobra.Draw();
         apples.Draw();
         grid.Draw();
-        DrawText(TextFormat("Beat: %i", scoreToBeat), pixelSize, pixelSize*3, 25, RED);
+        DrawText(TextFormat("Beat: %i", scoreToBeat), pixelSize, pixelSize*5, 25, RED);
     }
     else
     {
-        DrawText("Press ENTER to discover... TheSnake", GetScreenWidth() / 2 - MeasureText("Press ENTER to discover... The Snake", 25) / 2, GetScreenHeight() / 2 - 50, 25, RED);
+        DrawText("Press ENTER to discover... TheSnake", GetScreenWidth() / 2 - MeasureText("Press ENTER to discover... TheSnake", 25) / 2, GetScreenHeight() / 2 - 50, 25, RED);
         if (scoreToBeat != 0) 
         {
             // TEXT FORMAT NOT FORMAT TEXT....

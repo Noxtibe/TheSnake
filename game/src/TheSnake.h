@@ -5,12 +5,14 @@
 #include "Grid.h"
 #include "Apples.h"
 
+using namespace std;
+
 class TheSnake
 {
 private:
 
-	std::vector<SnakeTail> mSnakeTail;
-	std::vector<Vector2> mSnakePosition;
+	vector<SnakeTail> mSnakeTail;
+	vector<Vector2> mSnakePosition;
 	float mSnakeSize;
 	Vector2 mSnakeSpeed;
 	Grid* mGrid;
