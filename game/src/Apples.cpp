@@ -38,6 +38,12 @@ Color Apples::GetApplesColor()
 	return mApplesColor;
 }
 
+void Apples::Draw()
+{
+	DrawCircle((mApplesPositions.x + mApplesSize / 2) + 1, mApplesPositions.y + mApplesSize / 2, mApplesSize / 2, SKYBLUE);
+	DrawText(TextFormat("Score: %i", mApplesScore), mApplesSize, mApplesSize, 25, RED);
+}
+
 void Apples::SetApplesPosition(Vector2 applesPositions)
 {
 	mApplesPositions = applesPositions;
@@ -51,10 +57,4 @@ void Apples::SetApplesScore(unsigned short int applesScore)
 void Apples::SetActivated(bool activated)
 {
 	mActivated = activated;
-}
-
-void Apples::Draw()
-{
-	DrawCircle((mApplesPositions.x + mApplesSize / 2)+1, mApplesPositions.y + mApplesSize / 2, mApplesSize / 2, SKYBLUE);
-	DrawText(TextFormat("Score: %i",  mApplesScore), mApplesSize, mApplesSize, 25, RED);
 }

@@ -27,9 +27,10 @@ public:
 
 	bool GetFailed();
 
-	void Update(int frames, Apples* papples);
-	void SetFailed(bool failed);
 	void Draw();
 	void Controls();
+
+	void Update(int frames, Apples* papples);
+	void SetFailed(bool failed);
 };
 

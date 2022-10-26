@@ -29,6 +29,38 @@ bool TheSnake::GetFailed()
 	return mFailed;
 }
 
+void TheSnake::Draw()
+{
+	for (int i = 0; i < mSnakeTail.size(); i++)
+	{
+		DrawRectangleV(mSnakeTail[i].GetSnakeTailPosition(), { mSnakeSize, mSnakeSize }, mSnakeTail[i].GetSnakeTailColor());
+	}
+}
+
+void TheSnake::Controls()
+{
+	if (IsKeyPressed(KEY_LEFT) && mSnakeTail[0].GetSnakeTailSpeed().x == 0 && mMoving)
+	{
+		mSnakeTail[0].SetSnakeTailSpeed({ -mSnakeSize, 0 });
+		mMoving = false;
+	}
+	if (IsKeyPressed(KEY_RIGHT) && mSnakeTail[0].GetSnakeTailSpeed().x == 0 && mMoving)
+	{
+		mSnakeTail[0].SetSnakeTailSpeed({ mSnakeSize, 0 });
+		mMoving = false;
+	}
+	if (IsKeyPressed(KEY_UP) && mSnakeTail[0].GetSnakeTailSpeed().y == 0 && mMoving)
+	{
+		mSnakeTail[0].SetSnakeTailSpeed({ 0, -mSnakeSize });
+		mMoving = false;
+	}
+	if (IsKeyPressed(KEY_DOWN) && mSnakeTail[0].GetSnakeTailSpeed().y == 0 && mMoving)
+	{
+		mSnakeTail[0].SetSnakeTailSpeed({ 0, mSnakeSize });
+		mMoving = false;
+	}
+}
+
 void TheSnake::Update(int frames, Apples* papples)
 {
 	int randomX = 0;
@@ -107,36 +139,4 @@ void TheSnake::Update(int frames, Apples* papples)
 void TheSnake::SetFailed(bool failed)
 {
 	mFailed = failed;
-}
-
-void TheSnake::Draw()
-{
-	for (int i = 0; i < mSnakeTail.size(); i++)
-	{
-		DrawRectangleV(mSnakeTail[i].GetSnakeTailPosition(), {mSnakeSize, mSnakeSize}, mSnakeTail[i].GetSnakeTailColor());
-	}
-}
-
-void TheSnake::Controls()
-{
-	if (IsKeyPressed(KEY_LEFT) && mSnakeTail[0].GetSnakeTailSpeed().x == 0 && mMoving)
-	{
-		mSnakeTail[0].SetSnakeTailSpeed({ -mSnakeSize, 0 });
-		mMoving = false;
-	}
-	if (IsKeyPressed(KEY_RIGHT) && mSnakeTail[0].GetSnakeTailSpeed().x == 0 && mMoving)
-	{
-		mSnakeTail[0].SetSnakeTailSpeed({ mSnakeSize, 0 });
-		mMoving = false;
-	}
-	if (IsKeyPressed(KEY_UP) && mSnakeTail[0].GetSnakeTailSpeed().y == 0 && mMoving)
-	{
-		mSnakeTail[0].SetSnakeTailSpeed({ 0, -mSnakeSize });
-		mMoving = false;
-	}
-	if (IsKeyPressed(KEY_DOWN) && mSnakeTail[0].GetSnakeTailSpeed().y == 0 && mMoving)
-	{
-		mSnakeTail[0].SetSnakeTailSpeed({ 0, mSnakeSize });
-		mMoving = false;
-	}
 }

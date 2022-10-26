@@ -22,8 +22,8 @@ public:
 	unsigned int GetNbColumn();
 	unsigned int GetNbLine();
 
-	Vector2 GetStartPosition();
-
 	void Draw();
+
+	Vector2 GetStartPosition();
 };
 

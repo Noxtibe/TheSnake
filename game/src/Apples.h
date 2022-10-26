@@ -22,9 +22,10 @@ public:
 	bool GetActivated();
 	Color GetApplesColor();
 
+	void Draw();
+
 	void SetApplesPosition(Vector2 applesPositions);
 	void SetApplesScore(unsigned short int applesScore);
 	void SetActivated(bool activated);
-	void Draw();
 };
 

@@ -45,11 +45,6 @@ unsigned int Grid::GetNbLine()
 	return mGrid.y;
 }
 
-Vector2 Grid::GetStartPosition()
-{
-	return mStartPosition;
-}
-
 void Grid::Draw()
 {
 	Vector2 vect1;
@@ -62,8 +57,13 @@ void Grid::Draw()
 	}
 	for (int i = 0; i < ((mScreenHeight / mPixelSize) + 1); i++)
 	{
-		vect1 = { (mGrid.x / 2 ) + mStartPosition.x, (mPixelSize * i + mGrid.y / 2) + mStartPosition.y-1 };
-		vect2 = { (mScreenWidth - mGrid.x / 2) + mStartPosition.x, (mPixelSize * i + mGrid.y / 2) + mStartPosition.y-1 };
+		vect1 = { (mGrid.x / 2) + mStartPosition.x, (mPixelSize * i + mGrid.y / 2) + mStartPosition.y - 1 };
+		vect2 = { (mScreenWidth - mGrid.x / 2) + mStartPosition.x, (mPixelSize * i + mGrid.y / 2) + mStartPosition.y - 1 };
 		DrawLineV(vect1, vect2, BLACK);
 	}
+}
+
+Vector2 Grid::GetStartPosition()
+{
+	return mStartPosition;
 }

@@ -14,7 +14,7 @@ void InitializeGame();
 
 const int screenWidth = 1280;
 const int screenHeight = 720;
-const int pixelSize = 31;
+const int pixelSize = 16;
 const Vector2 startPosition = { 250, 50 };
 unsigned int frames = 0;
 unsigned int scoreToBeat = 0;
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 {
     // Initialization
     InitWindow(screenWidth, screenHeight, "cobra Game");
-    SetTargetFPS(60);  
+    SetTargetFPS(240);  
 
     cobra.SetFailed(true);
 
@@ -74,19 +74,19 @@ void Draw()
         cobra.Draw();
         apples.Draw();
         grid.Draw();
-        DrawText(TextFormat("Beat: %i", scoreToBeat), pixelSize, pixelSize*5, 25, RED);
+        DrawText(TextFormat("Beat: %i", scoreToBeat), pixelSize, pixelSize*5, 35, RED);
     }
     else
     {
-        DrawText("Press ENTER to discover... TheSnake", GetScreenWidth() / 2 - MeasureText("Press ENTER to discover... TheSnake", 25) / 2, GetScreenHeight() / 2 - 50, 25, RED);
+        DrawText("Press ENTER to discover... TheSnake", GetScreenWidth() / 2 - MeasureText("Press ENTER to discover... TheSnake", 25) / 2, GetScreenHeight() / 2 -75, 25, RED);
         if (scoreToBeat != 0) 
         {
             // TEXT FORMAT NOT FORMAT TEXT....
-            DrawText(TextFormat("Score to Beat: %i", scoreToBeat), GetScreenWidth() / 2 - MeasureText(TextFormat("Score to Beat : %i", scoreToBeat), 25) / 2, GetScreenHeight() * 0.6f, 25, RED);
-            DrawText(TextFormat("Score: %i", apples.GetApplesScore()), GetScreenWidth() / 2 - MeasureText(TextFormat("Score : %i", apples.GetApplesScore()), 20) / 2, GetScreenHeight() * 0.5f, 20, RED);
+            //DrawText(FormatText(..........) NO !
+            DrawText(TextFormat("Score to Beat: %i", scoreToBeat), GetScreenWidth() / 2 - MeasureText(TextFormat("Score to Beat : %i", scoreToBeat), 25) / 2, GetScreenHeight() * 0.6f, 40, RED);
+            DrawText(TextFormat("Score: %i", apples.GetApplesScore()), GetScreenWidth() / 2 - MeasureText(TextFormat("Score : %i", apples.GetApplesScore()), 20) / 2, GetScreenHeight() * 0.5f, 40, RED);
         }
     }
-
     EndDrawing();
 }
 
